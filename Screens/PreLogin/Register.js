@@ -14,13 +14,12 @@ import {
   Layout,
   Text,
 } from '@ui-kitten/components';
-import styles from "../../src/styles";
+import styles from '../../src/styles';
 
 const PersonIcon = props => <Icon {...props} name="person-outline" />;
 const HashIcon = props => <Icon {...props} name="hash-outline" />;
 const EmailIcon = props => <Icon {...props} name="email" />;
 const LockIcon = props => <Icon {...props} name="lock" />;
-
 
 export default class RegisterScreen extends Component {
   constructor(props) {
@@ -32,79 +31,80 @@ export default class RegisterScreen extends Component {
   };
   render() {
     return (
-        <SafeAreaView style={{flex: 1}}>
-          <Divider />
-          <Layout
-              style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <View style={LoginStyles.inputContainer}>
-              <Text category="h1" style={styles.titleText}>
-                Kayit Ol
-              </Text>
-              <Input
-                  placeholder="Isminiz"
-                  value={this.state.name}
-                  onChangeText={nextValue => this.setState({name: nextValue})}
-                  accessoryLeft={PersonIcon}
-                  autoCapitalize="words"
-                  textStyle={styles.textInput}
-                  style={styles.input}
-              />
-              <Input
-                  placeholder="TC. Kimlik Numaraniz"
-                  value={this.state.tckn}
-                  onChangeText={nextValue => this.setState({tckn: nextValue})}
-                  accessoryLeft={HashIcon}
-                  autoCapitalize="none"
-                  keyboardType={"number-pad"}
-                  textStyle={styles.textInput}
-                  style={styles.input}
-              />
-              <Input
-                  placeholder="E-mail"
-                  value={this.state.email}
-                  onChangeText={nextValue => this.setState({email: nextValue})}
-                  accessoryLeft={EmailIcon}
-                  autoCapitalize="none"
-                  textStyle={styles.textInput}
-                  style={styles.input}
-              />
-              <Input
-                  placeholder="Sifre"
-                  value={this.state.password}
-                  onChangeText={nextValue => this.setState({password: nextValue})}
-                  secureTextEntry={true}
-                  accessoryLeft={LockIcon}
-                  autoCapitalize="none"
-                  textStyle={styles.textInput}
-                  style={styles.input}
-              />
+      <SafeAreaView style={{flex: 1}}>
+        <Divider />
+        <Layout
+          style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={LoginStyles.inputContainer}>
+            <Text category="h1" style={styles.titleText}>
+              Kayit Ol
+            </Text>
+            <Input
+              placeholder="Isminiz"
+              value={this.state.name}
+              onChangeText={nextValue => this.setState({name: nextValue})}
+              accessoryLeft={PersonIcon}
+              autoCapitalize="words"
+              textStyle={styles.textInput}
+              style={styles.input}
+            />
+            <Input
+              placeholder="TC. Kimlik Numaraniz"
+              value={this.state.tckn}
+              onChangeText={nextValue => this.setState({tckn: nextValue})}
+              accessoryLeft={HashIcon}
+              autoCapitalize="none"
+              keyboardType={'number-pad'}
+              textStyle={styles.textInput}
+              style={styles.input}
+            />
+            <Input
+              placeholder="E-mail"
+              value={this.state.email}
+              onChangeText={nextValue => this.setState({email: nextValue})}
+              accessoryLeft={EmailIcon}
+              autoCapitalize="none"
+              textStyle={styles.textInput}
+              style={styles.input}
+            />
+            <Input
+              placeholder="Sifre"
+              value={this.state.password}
+              onChangeText={nextValue => this.setState({password: nextValue})}
+              secureTextEntry={true}
+              accessoryLeft={LockIcon}
+              autoCapitalize="none"
+              textStyle={styles.textInput}
+              style={styles.input}
+            />
 
-              <View style={LoginStyles.bottomView}>
-                <Button
-                    style={styles.submitButton}
-                    onPress={() => {
-                      this.setState({loading: true});
-                      this.props.route.params.mainFunctions.register(
-                          this.state.name,
-                          this.state.tckn,
-                          this.state.email,
-                          this.state.password,
-                          () => {
-                            this.setState({loading: false});
-                          },
-                      );
-                    }}
-                    accessoryLeft={
-                      this.state.loading ? this.LoadingIndicator : null
-                    }
-                    appearance={this.state.loading ? 'ghost' : 'filled'}>
-                  <Text style={styles.submitButtonText}>
-                    {this.state.loading ? '' : 'Register'}</Text>
-                </Button>
-              </View>
+            <View style={LoginStyles.bottomView}>
+              <Button
+                style={styles.submitButton}
+                onPress={() => {
+                  this.setState({loading: true});
+                  this.props.route.params.mainFunctions.register(
+                    this.state.name,
+                    this.state.tckn,
+                    this.state.email,
+                    this.state.password,
+                    () => {
+                      this.setState({loading: false});
+                    },
+                  );
+                }}
+                accessoryLeft={
+                  this.state.loading ? this.LoadingIndicator : null
+                }
+                appearance={this.state.loading ? 'ghost' : 'filled'}>
+                <Text style={styles.submitButtonText}>
+                  {this.state.loading ? '' : 'Register'}
+                </Text>
+              </Button>
             </View>
-          </Layout>
-        </SafeAreaView>
+          </View>
+        </Layout>
+      </SafeAreaView>
     );
   }
 }
