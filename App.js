@@ -179,7 +179,7 @@ export default class App extends Component {
       });
   }
 
-  async register(name, tckn, email, password, callback) {
+  async register(name, email, password, callback) {
     // Firebase part
     await auth()
       .createUserWithEmailAndPassword(email, password)
@@ -187,7 +187,6 @@ export default class App extends Component {
         console.log('User account created & signed in!');
         let user = {
           real_name: name,
-          // tckn: tckn,
           email: email,
           password: password,
           user_id: res.user.uid,

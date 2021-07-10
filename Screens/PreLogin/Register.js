@@ -87,7 +87,6 @@ export default class RegisterScreen extends Component {
                   this.setState({loading: true});
                   this.props.route.params.mainFunctions.register(
                     this.state.name,
-                    // this.state.tckn,
                     this.state.email,
                     this.state.password,
                     () => {
