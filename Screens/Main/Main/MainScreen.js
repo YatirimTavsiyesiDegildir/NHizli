@@ -65,7 +65,19 @@ export default class GraphsScreen extends Component {
     return (
       <SafeAreaView style={{flex: 1}}>
         <TopNavigation
-          title={<Text style={styles.miniTitle}>Hazirlan</Text>}
+          title={
+            <Image
+              source={require('../../../src/img/logo_transparent.png')}
+              style={{
+                height: 30,
+                width: 70,
+                overflow: 'visible',
+                resizeMode: 'center',
+                padding: 8,
+              }}
+            />
+          }
+          style={{margin: 0}}
           alignment="center"
           accessoryRight={this.renderRightActions}
           accessoryLeft={this.renderLeftActions}
