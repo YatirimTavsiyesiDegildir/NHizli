@@ -187,7 +187,7 @@ export default class App extends Component {
         console.log('User account created & signed in!');
         let user = {
           real_name: name,
-          tckn: tckn,
+          // tckn: tckn,
           email: email,
           password: password,
           user_id: res.user.uid,

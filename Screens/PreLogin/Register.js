@@ -48,6 +48,7 @@ export default class RegisterScreen extends Component {
               textStyle={styles.textInput}
               style={styles.input}
             />
+            {/*
             <Input
               placeholder="TC. Kimlik Numaraniz"
               value={this.state.tckn}
@@ -58,6 +59,7 @@ export default class RegisterScreen extends Component {
               textStyle={styles.textInput}
               style={styles.input}
             />
+            */}
             <Input
               placeholder="E-mail"
               value={this.state.email}
@@ -85,7 +87,7 @@ export default class RegisterScreen extends Component {
                   this.setState({loading: true});
                   this.props.route.params.mainFunctions.register(
                     this.state.name,
-                    this.state.tckn,
+                    // this.state.tckn,
                     this.state.email,
                     this.state.password,
                     () => {
