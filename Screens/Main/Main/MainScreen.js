@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  Dimensions,
   ScrollView,
   View,
-  TouchableOpacity,
   RefreshControl,
+  Image,
 } from 'react-native';
 import {
   Divider,
@@ -81,6 +80,51 @@ export default class GraphsScreen extends Component {
                 onRefresh={() => this.setState({refreshing: false})}
               />
             }>
+            <Card
+              style={[
+                styles.card,
+                {alignItems: 'flex-start', justifyContent: 'flex-start'},
+              ]}>
+              <Image
+                source={require('../../../src/img/marathon_logo.png')}
+                style={{width: 100, height: 100}}
+                resizeMode={'contain'}
+              />
+              <View
+                style={{
+                  backgroundColor: '#eb008d',
+                  width: 310,
+                  height: 100,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: 16,
+
+                  shadowColor: '#000',
+                  shadowOffset: {
+                    width: 0,
+                    height: 2,
+                  },
+                  shadowOpacity: 0.25,
+                  shadowRadius: 3.84,
+
+                  elevation: 5,
+                }}>
+                <Text
+                  style={{
+                    alignSelf: 'center',
+                    width: '100%',
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    color: '#FFF',
+                    fontSize: 24,
+                  }}>
+                  3 Ay, 27 Gun, 6 Saat
+                </Text>
+              </View>
+            </Card>
+
+            <View style={styles.divider} />
+
             <Card style={styles.card}>
               <Text category="h4" style={styles.titleTextMedium}>
                 Bu Ay Tamamladigin Kosular
