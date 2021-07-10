@@ -125,6 +125,60 @@ export default class GraphsScreen extends Component {
 
             <View style={styles.divider} />
 
+            <Card
+              style={[
+                styles.card,
+                {
+                  alignItems: 'flex-start',
+                  justifyContent: 'flex-start',
+                  backgroundColor: '#0175ec',
+                },
+              ]}>
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  width: '100%',
+                  color: '#FFF',
+                  fontSize: 18,
+                  marginBottom: 8,
+                }}>
+                Artik Marathona Hazirsin!
+              </Text>
+              <View
+                style={{
+                  width: 320,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <View
+                  style={{
+                    backgroundColor: '#00000000',
+                    padding: 8,
+                    paddingHorizontal: 32,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 16,
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    width: 250,
+                  }}>
+                  <Text
+                    style={{
+                      alignSelf: 'center',
+                      width: '100%',
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      color: '#FFF',
+                      fontSize: 24,
+                    }}>
+                    Hemen Kaydol
+                  </Text>
+                </View>
+              </View>
+            </Card>
+
+            <View style={styles.divider} />
+
             <Card style={styles.card}>
               <Text category="h4" style={styles.titleTextMedium}>
                 Bu Ay Tamamladigin Kosular
