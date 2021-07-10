@@ -33,9 +33,9 @@ export default class FriendsScreen extends Component {
       friends: [
         {
           name: 'Cinar Kiziltepe',
-          img: require('NKolayHazirlan/src/img/cinar.jpg'),
+          img: require('../../../src/img/cinar.jpg'),
         },
-        {name: 'Ada Topcu', img: require('NKolayHazirlan/src/img/ada.jpeg')},
+        {name: 'Ada Topcu', img: require('../../../src/img/ada.jpeg')},
         // {name: 'Ege Kaan Gurkan'},
         // {name: 'Yashar Kardar'},
         // {name: 'Beril Karabulut'},

@@ -113,7 +113,7 @@ export default class ProfileScreen extends Component {
                 <View style={ProfileStyles.avatarInnerContainer}>
                   <Image
                     style={ProfileStyles.avatar}
-                    source={require('NKolayHazirlan/src/img/dogu.jpeg')}
+                    source={require('../../src/img/dogu.jpeg')}
                   />
                 </View>
               </View>
