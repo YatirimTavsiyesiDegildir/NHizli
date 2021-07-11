@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {
     SafeAreaView,
     StyleSheet,
+    ImageBackground,
     View,
     Image,
     TouchableOpacity,
+    Button,
     ScrollView
 } from 'react-native';
 import {
@@ -15,7 +17,6 @@ import {
     TopNavigationAction,
     Icon,
     Modal,
-    Button,
     Card,
 } from '@ui-kitten/components';
 import styles from "../../../src/styles";
@@ -54,93 +55,46 @@ export default class TargetScreen extends Component {
         return (
             <SafeAreaView style={{flex: 1}}>
                 <TopNavigation
-                    title={<Text style={styles.miniTitle}>Birikim Hedeflerim</Text>}
+                    title={<Text style={styles.miniTitle}>Koş</Text>}
                     alignment="center"
                     accessoryRight={this.renderRightActions}
                 />
                 <Divider/>
-                <Layout style={styles.layout}>
-                    <ScrollView style={styles.container}>
-                        <Card style={[styles.card, {alignItems: 'flex-start'}]}>
-                            <Text category={'h1'} style={[styles.titleTextMedium, {marginTop: 0}]}>Oyun
-                                Bilgisayari</Text>
-                            <Text category={'h1'} style={[styles.targetTitle, {color: "#7A0A20"}]}>Hedef: <Text>10000
-                                TL</Text></Text>
-                            <Text category={'h1'}
-                                  style={[styles.targetTitle, {color: "#0B6F11"}]}>Biriktirilen: <Text>9000
-                                TL</Text></Text>
-                            <Progress.Bar progress={this.state.progress1} width={310} animated={true}
-                                          color={"#0B6F11"}/>
-                        </Card>
-                        <View style={styles.divider}/>
-                        <Card style={[styles.card, {alignItems: 'flex-start'}]}>
-                            <Text category={'h1'} style={[styles.titleTextMedium, {marginTop: 0}]}>Bluetooth
-                                Kulaklik</Text>
-                            <Text category={'h1'} style={[styles.targetTitle, {color: "#7A0A20"}]}>Hedef: <Text>700
-                                TL</Text></Text>
-                            <Text category={'h1'}
-                                  style={[styles.targetTitle, {color: "#0B6F11"}]}>Biriktirilen: <Text>150
-                                TL</Text></Text>
-                            <Progress.Bar progress={this.state.progress2} width={310} animated={true}
-                                          color={"#0B6F11"}/>
-                        </Card>
-                        <View style={styles.divider}/>
-                        <Card style={[styles.card, {alignItems: 'flex-start'}]}>
-                            <Text category={'h1'}
-                                  style={[styles.targetTitle, {color: "grey", fontSize: 14}]}>Toplu Birikim</Text>
-                            <Text category={'h1'} style={[styles.titleTextMedium, {marginTop: 0}]}>Kayak Tatili</Text>
-                            <Text category={'h1'} style={[styles.targetTitle, {color: "#7A0A20"}]}>Hedef: <Text>4500
-                                TL</Text></Text>
-                            <Text category={'h1'}
-                                  style={[styles.targetTitle, {color: "#0B6F11"}]}>Biriktirilen: <Text>3900
-                                TL</Text></Text>
-                            <Progress.Bar progress={this.state.progress3} width={310} animated={true}
-                                          color={"#0B6F11"}/>
-                            <View style={{flexDirection: 'row', width: '100%', marginTop: 8}}>
-                                <View style={styles.friendAvatarContainer}>
-                                    <Image
-                                        style={styles.friendAvatar}
-                                        source={{
-                                            uri: 'https://thispersondoesnotexist.com/image?ts=' + date.getMinutes().toString() + date.getSeconds().toString()
-                                        }}
-                                    />
-                                </View>
-                                <View style={styles.friendAvatarContainer}>
-                                    <Image
-                                        style={styles.friendAvatar}
-                                        source={{
-                                            uri: 'https://thispersondoesnotexist.com/image?ts=' + date.getSeconds().toString()
-                                        }}
-                                    />
-                                </View>
-                                <View style={styles.friendAvatarContainer}>
-                                    <Image
-                                        style={styles.friendAvatar}
-                                        source={{
-                                            uri: 'https://thispersondoesnotexist.com/image?ts=' + (i++).toString()
-                                        }}
-                                    />
-                                </View>
-                                <View style={styles.friendAvatarContainer}>
-                                    <View
-                                        style={[styles.friendAvatar, {
-                                            backgroundColor: "#ababab",
-                                            justifyContent: 'center'
-                                        }]}
 
-                                    >
-                                        <OtherPlusIcon fill={'#222'} style={{height: 40, marginTop: 0}}/>
-                                    </View>
-                                </View>
-                            </View>
-                        </Card>
-                        <View style={{height: 75}}/>
-                    </ScrollView>
-                </Layout>
+                    <View style={BackStyles.container}>
+                    <ImageBackground source={require('../../../src/img/map.png')} resizeMode="cover" style={BackStyles.image}>
+                        <View style={{position: "absolute",bottom: 5, left: 0, right: 0, alignItems: "center", }}>
+                            <TouchableOpacity style={{ height: 100 , width:100, borderRadius:50, alignItems:"center", justifyContent:"center", backgroundColor: "#eb008d", }}>
+                                <Text style={{fontWeight:"bold",color:"#FFF"}} >KOŞ</Text>
+                            </TouchableOpacity>
+                        </View>
+
+
+                    </ImageBackground>
+                    </View>
+
             </SafeAreaView>
         );
     }
 }
+
+const BackStyles = StyleSheet.create({
+    container: {
+        flex:1,
+    },
+    image: {
+        flex: 1,
+        justifyContent: "center",
+    },
+    button: {
+
+        position: 'absolute',
+        bottom:0,
+        alignSelf:'center',
+        backgroundColor: "#eb008d",
+        borderColor: "#eb008d",
+    },
+});
 
 const ProfileStyles = StyleSheet.create({
     newContainer: {
