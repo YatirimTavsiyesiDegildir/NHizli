@@ -76,8 +76,6 @@ export default class GraphsScreen extends Component {
           }
           style={{margin: 0}}
           alignment="center"
-          accessoryRight={this.renderRightActions}
-          accessoryLeft={this.renderLeftActions}
         />
         <Divider />
         <Layout style={styles.layout}>
