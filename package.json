@@ -26,6 +26,7 @@
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-chart-kit": "^6.11.0",
+    "react-native-feather": "^1.1.2",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-image-crop-picker": "^0.32.0",
     "react-native-progress": "^4.1.2",
@@ -33,7 +34,7 @@
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "^3.0.5",
     "react-native-screens": "^2.8.0",
-    "react-native-svg": "^12.1.0"
+    "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

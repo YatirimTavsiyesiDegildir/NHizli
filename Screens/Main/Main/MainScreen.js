@@ -18,10 +18,7 @@ import {
 } from '@ui-kitten/components';
 
 import {LineChart, PieChart, ContributionGraph} from 'react-native-chart-kit';
-import {
-  SubscriptionWarningCard,
-  FriendWarningCard,
-} from '../../../Components/Card';
+import * as FIcon from 'react-native-feather';
 
 import {OurProgressChart} from '../../../src/component/ProgressChart';
 import styles from '../../../src/styles';
@@ -191,6 +188,62 @@ export default class GraphsScreen extends Component {
 
             <View style={styles.divider} />
 
+            <Card style={[styles.card, {alignItems: 'flex-start'}]}>
+              <Text category="h4" style={styles.titleTextMedium}>
+                Gunun Gorevi
+              </Text>
+
+              <View style={GraphsStyles.taskRow}>
+                <View style={GraphsStyles.successCircle} />
+                <Text style={{color: '#0B0B0B', fontWeight: 'bold'}}>
+                  {' '}
+                  Bir arkadasinla kos
+                </Text>
+              </View>
+              <View style={GraphsStyles.taskRow}>
+                <View
+                  style={[
+                    GraphsStyles.successCircle,
+                    {backgroundColor: '#eb008d'},
+                  ]}>
+                  <FIcon.Check style={{width: 10, height: 10, color: '#FFF'}} />
+                </View>
+                <Text
+                  style={{
+                    color: '#0B0B0B',
+                    textDecorationLine: 'line-through',
+                  }}>
+                  {' '}
+                  1km kos
+                </Text>
+              </View>
+              <View style={GraphsStyles.taskRow}>
+                <View
+                  style={[
+                    GraphsStyles.successCircle,
+                    {backgroundColor: '#eb008d'},
+                  ]}>
+                  <FIcon.Check style={{width: 10, height: 10, color: '#FFF'}} />
+                </View>
+                <Text
+                  style={{
+                    color: '#0B0B0B',
+                    textDecorationLine: 'line-through',
+                  }}>
+                  {' '}
+                  Nefes egzersizi yap
+                </Text>
+              </View>
+
+              <View style={[GraphsStyles.taskRow]}>
+                <View style={GraphsStyles.smallCircle} />
+                <View style={GraphsStyles.smallCircle} />
+                <View style={GraphsStyles.smallCircle} />
+              </View>
+            </Card>
+
+            <View style={styles.divider} />
+
             <Card style={styles.card}>
               <Text category="h4" style={styles.titleTextMedium}>
                 Bu Ay Tamamladigin Kosular
@@ -264,5 +317,36 @@ const GraphsStyles = StyleSheet.create({
   },
   sectionTitle: {
     textAlign: 'center',
+  },
+  successCircle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#FFF',
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+
+    marginRight: 16,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  taskRow: {flexDirection: 'row', alignItems: 'center', marginTop: 16},
+
+  smallCircle: {
+    backgroundColor: '#7F7F7F',
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    margin: 8,
   },
 });

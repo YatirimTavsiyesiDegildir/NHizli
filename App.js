@@ -36,7 +36,6 @@ export default class App extends Component {
   clearLoginInfo() {
     StoreData('email', '');
     StoreData('user_id', '');
-    StoreData('tckn', '');
     StoreData('real_name', '');
     StoreData('password', '');
     global.email = '';
@@ -50,7 +49,6 @@ export default class App extends Component {
   saveLoginInfo(user) {
     StoreData('email', user.email);
     StoreData('user_id', user.user_id);
-    StoreData('tckn', user.tckn);
     StoreData('real_name', user.name);
     StoreData('password', user.password);
     global.email = user.email;
@@ -232,8 +230,8 @@ export default class App extends Component {
               mainFunctions={{
                 logInUser: (email, password, callback) =>
                   this.logInUserWithPassword(email, password, callback),
-                register: (name, tckn, email, password, callback) =>
-                  this.register(name, tckn, email, password, callback),
+                register: (name, email, password, callback) =>
+                  this.register(name, email, password, callback),
               }}
             />
           )}
