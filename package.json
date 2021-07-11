@@ -29,6 +29,7 @@
     "react-native-feather": "^1.1.2",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-image-crop-picker": "^0.32.0",
+    "react-native-leaderboard": "^1.0.6",
     "react-native-progress": "^4.1.2",
     "react-native-qrcode-svg": "^6.0.6",
     "react-native-reanimated": "^1.9.0",
